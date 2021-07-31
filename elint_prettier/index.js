@@ -4,7 +4,7 @@
 
 // Import readline module for getting input from console
 // Find more here: https://nodejs.org/api/readline.html#readline_readline
-const readline_1 = require('readline');
+const readline_1 = require("readline");
 // define question/output interface
 const rl = readline_1.createInterface({
   // readable stream
@@ -17,7 +17,7 @@ const menuQ = () => {
   return new Promise((resolve, reject) => {
     try {
       // (readable, writeable from readline interface)
-      rl.question('Your choice: ', (answer) => {
+      rl.question("Your choice: ", (answer) => {
         resolve(answer);
       });
     } catch (error) {
@@ -28,7 +28,7 @@ const menuQ = () => {
 };
 let milkQ = () => {
   return new Promise((resolve, reject) => {
-    rl.question('How many cups of milk to add? ', (answer) => {
+    rl.question("How many cups of milk to add? ", (answer) => {
       resolve(answer);
     });
   });
@@ -53,14 +53,14 @@ const userOptions = async (mochaObject) => {
 
 const espressoQ = () => {
   return new Promise((resolve, reject) => {
-    rl.question('How many shots of espresso to add? ', (answer) => {
+    rl.question("How many shots of espresso to add? ", (answer) => {
       resolve(answer);
     });
   });
 };
 const peppermintQ = () => {
   return new Promise((resolve, reject) => {
-    rl.question('How many shots of peppermint to add? ', (answer) => {
+    rl.question("How many shots of peppermint to add? ", (answer) => {
       resolve(answer);
     });
   });
@@ -70,28 +70,28 @@ class Mocha {
   constructor() {
     this.milk = 1;
     this.shot = 1;
-    this.chocolateType = 'dark';
+    this.chocolateType = "dark";
   }
   // list the ingredients of the mocha
   prepare() {
-    console.log('Your', this.chocolateType, ' Chocolate Mocha Ingredients:');
-    console.log(this.chocolateType, ' chocolate');
-    console.log('Cups of milk: ', this.milk);
-    console.log('Cups of espresso: ', this.shot, '\n\n');
+    console.log("Your", this.chocolateType, " Chocolate Mocha Ingredients:");
+    console.log(this.chocolateType, " chocolate");
+    console.log("Cups of milk: ", this.milk);
+    console.log("Cups of espresso: ", this.shot, "\n\n");
   }
 }
 // inherits from Mocha
 class WhiteChocolateMocha extends Mocha {
   constructor() {
     super(...arguments);
-    this.chocolateType = 'White';
+    this.chocolateType = "White";
   }
 }
 // inherits from Mocha
 class DarkChocolateMocha extends Mocha {
   constructor() {
     super(...arguments);
-    this.chocolateType = 'Dark';
+    this.chocolateType = "Dark";
   }
 }
 // inherits from Mocha
@@ -103,11 +103,11 @@ class PeppermintMocha extends Mocha {
   }
   // Overrides Mocha prepare with additional statements
   prepare() {
-    console.log('Your Peppermint Mocha Ingredients:');
-    console.log('Dark chocolate');
-    console.log('Cups of milk: ', this.milk);
-    console.log('Cups of espresso: ', this.shot);
-    console.log('Pumps of peppermint: ', this.peppermintSyrup, '\n\n');
+    console.log("Your Peppermint Mocha Ingredients:");
+    console.log("Dark chocolate");
+    console.log("Cups of milk: ", this.milk);
+    console.log("Cups of espresso: ", this.shot);
+    console.log("Pumps of peppermint: ", this.peppermintSyrup, "\n\n");
   }
 }
 
@@ -135,7 +135,7 @@ const main = () => {
           await userOptions(peppermintMocha);
           break;
         default: {
-          console.log('Option invalid, please choose from menu.');
+          console.log("Option invalid, please choose from menu.");
           break;
         }
       }
@@ -150,11 +150,11 @@ main();
 // display menu and return selected menu item
 const showMenu = async () => {
   console.log(
-    'Select Mocha from menu: \n',
-    '1: Create White Chocolate Mocha \n',
-    '2: Create Dark Chocolate Mocha \n',
-    '3: Create Peppermint Mocha\n',
-    '0: Exit\n'
+    "Select Mocha from menu: \n",
+    "1: Create White Chocolate Mocha \n",
+    "2: Create Dark Chocolate Mocha \n",
+    "3: Create Peppermint Mocha\n",
+    "0: Exit\n"
   );
   const qMenu = await menuQ();
   return qMenu;
