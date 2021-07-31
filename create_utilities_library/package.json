@@ -1,0 +1,14 @@
+{
+  "name": "create_utilities",
+  "version": "1.0.0",
+  "description": "Used for code examples with lesson one of the Udemy course \"Full Stack JavaScript Devloper\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Upton",
+  "license": "ISC",
+  "devDependencies": {
+    "commander": "^8.1.0"
+  }
+}
